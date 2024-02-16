@@ -29,7 +29,7 @@ jobs:
           REPOSITORY: ecr-cache-test
           IMAGE_TAG: latest
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG \
+          docker build --builder=container -t $REGISTRY/$REPOSITORY:$IMAGE_TAG \
             --cache-to mode=max,image-manifest=true,oci-mediatypes=true,type=registry,ref=$REGISTRY/$REPOSITORY:$IMAGE_TAG \
             --cache-from type=registry,ref=$REGISTRY/$REPOSITORY:$IMAGE_TAG .
 

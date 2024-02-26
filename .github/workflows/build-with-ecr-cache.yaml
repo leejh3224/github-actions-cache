@@ -33,5 +33,5 @@ jobs:
           context: .
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
-          cache-from: type=registry,mode=max,ref=${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }},image-manifest=true,oci-mediatypes=true
-          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }},image-manifest=true,oci-mediatypes=true
+          cache-from: type=registry,mode=max,ref=${{ env.REGISTRY }}/${{ env.REPOSITORY }}:cache,image-manifest=true,oci-mediatypes=true
+          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.REPOSITORY }}:cache,image-manifest=true,oci-mediatypes=true
